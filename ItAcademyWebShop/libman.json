@@ -1,0 +1,51 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "bootstrap-vue@2.21.1",
+      "destination": "wwwroot/bootstrap-vue/",
+      "files": [
+        "bootstrap-vue-icons.common.js",
+        "bootstrap-vue-icons.common.js.map",
+        "bootstrap-vue-icons.common.min.js",
+        "bootstrap-vue-icons.common.min.js.map",
+        "bootstrap-vue-icons.css",
+        "bootstrap-vue-icons.css.map",
+        "bootstrap-vue-icons.esm.js",
+        "bootstrap-vue-icons.esm.js.map",
+        "bootstrap-vue-icons.esm.min.js",
+        "bootstrap-vue-icons.esm.min.js.map",
+        "bootstrap-vue-icons.js",
+        "bootstrap-vue-icons.js.map",
+        "bootstrap-vue-icons.min.css",
+        "bootstrap-vue-icons.min.css.map",
+        "bootstrap-vue-icons.min.js",
+        "bootstrap-vue-icons.min.js.map",
+        "bootstrap-vue.common.js",
+        "bootstrap-vue.common.js.map",
+        "bootstrap-vue.common.min.js",
+        "bootstrap-vue.common.min.js.map",
+        "bootstrap-vue.css",
+        "bootstrap-vue.css.map",
+        "bootstrap-vue.esm.js",
+        "bootstrap-vue.esm.js.map",
+        "bootstrap-vue.esm.min.js",
+        "bootstrap-vue.esm.min.js.map",
+        "bootstrap-vue.js",
+        "bootstrap-vue.js.map",
+        "bootstrap-vue.min.css",
+        "bootstrap-vue.min.css.map",
+        "bootstrap-vue.min.js",
+        "bootstrap-vue.min.js.map",
+        "vetur-attributes.json",
+        "vetur-tags.json",
+        "web-types.json"
+      ]
+    },
+    {
+      "library": "bootstrap-table@1.18.1",
+      "destination": "wwwroot/bootstrap-table/"
+    }
+  ]
+}

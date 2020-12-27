@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/StyleSheet.css" type="text/css" />
+</head>
+<body>
+
+    <div class="container fixed">
+        <div class="row">
+            <h1>Shop</h1>
+        </div>
+        <div id="header" class="row fixed rounded-corners light-bg">
+            <p>
+                @Html.ActionLink("Home", "Index", "Home") |
+                @Html.ActionLink("Contacts", "Contacts", "Home") |
+                @Html.ActionLink("About", "About", "Home")
+            </p>
+        </div>
+        <div id="pageContent" class="row zero-margin">
+            @if (IsSectionDefined("Menu"))
+            {
+                <div class="col menu-section corners-solid">
+                    @RenderSection("menu", false)
+                    <nav>
+                        <ul class="no-dot">
+                            <li>@Html.ActionLink("Mobile Phone", "MobilePhone", "Home", new object { }, new { @class = "non-blue-ref" })</li>
+                            <li>@Html.ActionLink("Notebook", "Notebook", "Home", new object { }, new { @class = "non-blue-ref" })</li>
+                            <li>@Html.ActionLink("Camera", "Camera", "Home", new object { }, new { @class = "non-blue-ref" })</li>
+                            <li>@Html.ActionLink("Headphones", "Headphones", "Home", new object { }, new { @class = "non-blue-ref" })</li>
+                        </ul>
+                    </nav>
+                </div>
+            }
+            <div id="content" class="col content corners-dashed">
+                @RenderBody()
+            </div>
+        </div>
+        <div id="footer" class="row fixed rounded-corners dark-bg">
+            <p>Copyright 2014</p>
+        </div>
+
+    </div>
+</body>
+</html>
