@@ -22,5 +22,11 @@ namespace ItAcademyWebShop.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult SetUserName(string userName)
+        {
+            return View("Index");
+        }
     }
 }
