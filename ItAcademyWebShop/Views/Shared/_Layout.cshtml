@@ -16,7 +16,25 @@
 
     <div class="container fixed">
         <div class="row">
-            <h1>Shop</h1>
+            <div class="col">
+                <h1>Shop</h1>
+            </div>
+            <div class="col user-name-input">
+                @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor;
+
+                @{
+                    string outputName = "";
+                    @if (HttpContextAccessor.HttpContext.Request.Cookies.Any(s => s.Key == "userName"))
+                    {
+                        outputName = HttpContextAccessor.HttpContext.Request.Cookies.First(s => s.Key == "userName").Value;
+                    }
+                    else
+                    {
+                        outputName = "unknown friend";
+                    }
+                }
+                Hello, @outputName !
+            </div>
         </div>
         <div id="header" class="row fixed rounded-corners light-bg">
             <p>
@@ -24,6 +42,7 @@
                 @Html.ActionLink("Contacts", "Contacts", "Home") |
                 @Html.ActionLink("About", "About", "Home")
             </p>
+
         </div>
         <div id="pageContent" class="row zero-margin">
             @if (IsSectionDefined("Menu"))

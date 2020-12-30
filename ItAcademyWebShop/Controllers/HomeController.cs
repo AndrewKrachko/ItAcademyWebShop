@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ItAcademyWebShop.Controllers
@@ -24,9 +22,13 @@ namespace ItAcademyWebShop.Controllers
         }
 
         [HttpPost]
-        public IActionResult SetUserName(string userName)
+        public IActionResult SetUserNameViaCookie(string userName)
         {
-            return View("Index");
+            var cookieOptions = new CookieOptions();
+            cookieOptions.Expires = DateTime.Now.AddDays(1);
+            Response.Cookies.Append("userName", userName ?? "", cookieOptions);
+            
+            return Redirect("Index");
         }
     }
 }
