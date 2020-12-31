@@ -40,5 +40,10 @@ namespace ItAcademyWebShop
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
+        private void InitDatabase()
+        {
+
+        }
     }
 }
