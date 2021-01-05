@@ -1,13 +1,14 @@
 ﻿using ItAcademyWebShop.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace DatabaseConnector
 {
     public class DatabaseProvider : IRepository
     {
         private string _connectionString = "";
-
+ 
         public DatabaseProvider(string connectionString)
         {
             _connectionString = connectionString;
