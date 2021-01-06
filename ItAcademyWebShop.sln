@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItAcademyWebShop", "ItAcade
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseConnector", "DatabaseConnector\DatabaseConnector.csproj", "{2D6F85BE-0E18-408F-883B-0CFB8F4A8E1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItAcademyWebShop.Items", "Interfaces\ItAcademyWebShop.Items.csproj", "{D331923A-F1F4-4D80-9A30-9CF43B41F8C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2D6F85BE-0E18-408F-883B-0CFB8F4A8E1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D6F85BE-0E18-408F-883B-0CFB8F4A8E1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D6F85BE-0E18-408F-883B-0CFB8F4A8E1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D331923A-F1F4-4D80-9A30-9CF43B41F8C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D331923A-F1F4-4D80-9A30-9CF43B41F8C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D331923A-F1F4-4D80-9A30-9CF43B41F8C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D331923A-F1F4-4D80-9A30-9CF43B41F8C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

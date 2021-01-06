@@ -1,6 +1,8 @@
-﻿using ItAcademyWebShop.Interfaces;
+﻿using ItAcademyWebShop.Items.Interfaces;
+using ItAcademyWebShop.Items.Items;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace DatabaseConnector
@@ -8,20 +10,70 @@ namespace DatabaseConnector
     public class DatabaseProvider : IRepository
     {
         private string _connectionString = "";
- 
-        public DatabaseProvider(string connectionString)
+
+        public DatabaseProvider(string connectionString = "Server=WSLI002\\SQLEXPRESS;Database=ItAcademyWebShop;User Id=sa;Password=Password123;")
         {
             _connectionString = connectionString;
         }
 
         public IEnumerable<ICategory> GetCategories()
         {
-            throw new NotImplementedException();
+            var result = new List<Category>();
+
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+
+                var command = new SqlCommand("Select * from Category", connection);
+                command.CommandType = CommandType.Text;
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    var data = new object[reader.FieldCount];
+                    reader.GetValues(data);
+
+                    result.Add(new Category(data[0].ToString(), data[1].ToString()));
+                }
+
+                connection.Close();
+            }
+
+            return result;
         }
 
         public IEnumerable<IItem> GetCategoryItems(string category)
         {
-            throw new NotImplementedException();
+            var result = new List<Item>();
+
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var command = new SqlCommand($"Select Items.id, Items.Name, Items.Description, Items.Price from Items " +
+                    $"join CategoryItems on Items.Id = CategoryItems.ItemId " +
+                    $"join Category on CategoryItems.CategoryId = Category.id " +
+                    $"where Category.Name = '{category}';", connection);
+                command.CommandType = CommandType.Text;
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    var data = new object[reader.FieldCount];
+                    reader.GetValues(data);
+
+                    var price = 0.0;
+                    double.TryParse(data[3].ToString(), out price);
+                    result.Add(new Item(data[0].ToString(), data[1].ToString(), new List<ICategory>(), data[2].ToString(), price));
+                }
+
+                connection.Close();
+            }
+
+            return result;
         }
 
         public IItem GetItem(string id)

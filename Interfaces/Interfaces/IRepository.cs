@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ItAcademyWebShop.Interfaces
+namespace ItAcademyWebShop.Items.Interfaces
 {
     public interface IRepository
     {

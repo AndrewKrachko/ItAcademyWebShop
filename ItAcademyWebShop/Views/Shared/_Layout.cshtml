@@ -1,4 +1,4 @@
-﻿
+﻿@model ItAcademyWebShop.Views.Shared.ItemModel
 @{
     Layout = null;
 }
@@ -51,10 +51,10 @@
                     @RenderSection("menu", false)
                     <nav>
                         <ul class="no-dot">
-                            <li>@Html.ActionLink("Mobile Phone", "MobilePhone", "Home", new object { }, new { @class = "non-blue-ref" })</li>
-                            <li>@Html.ActionLink("Notebook", "Notebook", "Home", new object { }, new { @class = "non-blue-ref" })</li>
-                            <li>@Html.ActionLink("Camera", "Camera", "Home", new object { }, new { @class = "non-blue-ref" })</li>
-                            <li>@Html.ActionLink("Headphones", "Headphones", "Home", new object { }, new { @class = "non-blue-ref" })</li>
+                            @foreach (var category in Model.GetMenuItems())
+                            {
+                                <li>@Html.ActionLink(category.CategoryName, "Index", "Home", new { name = category.CategoryName }, new { @class = "non-blue-ref" })</li>
+                            }
                         </ul>
                     </nav>
                 </div>

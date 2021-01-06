@@ -1,19 +1,28 @@
 ﻿using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ItAcademyWebShop.Items.Interfaces;
+using ItAcademyWebShop.Views.Shared;
 
 namespace ItAcademyWebShop.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private IRepository _repository;
+
+        public HomeController(IRepository repository)
         {
-            return View();
+            _repository = repository;
+        }
+
+        public IActionResult Index(string name = "")
+        {
+            return View(new ItemModel(_repository) { ActiveCategory = name});
         }
 
         public IActionResult Contacts()
         {
-            return View();
+            return View(new ItemModel(_repository));
         }
 
         public IActionResult About()
