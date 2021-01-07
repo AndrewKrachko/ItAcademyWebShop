@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace DatabaseConnector
+namespace MsSqlDb.AdoDataProvider
 {
-    public class DatabaseProvider : IRepository
+    public class SqlDataProvider : IRepository
     {
-        private string _connectionString = "";
+        private string _connectionString = string.Empty;
 
-        public DatabaseProvider(string connectionString = "Server=WSLI002\\SQLEXPRESS;Database=ItAcademyWebShop;User Id=sa;Password=Password123;")
+        public SqlDataProvider(string connectionString = "Server=DESKTOP-3BAAIFR\\SQLEXPRESS;Database=ItAcademyWebShop;User Id=sa;Password=Password123;")
         {
             _connectionString = connectionString;
         }

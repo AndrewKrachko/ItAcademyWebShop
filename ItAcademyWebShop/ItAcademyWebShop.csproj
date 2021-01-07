@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DatabaseConnector\DatabaseConnector.csproj" />
+    <ProjectReference Include="..\DatabaseConnector\MsSqlDb.SqlDataProvider.csproj" />
     <ProjectReference Include="..\Interfaces\ItAcademyWebShop.Items.csproj" />
   </ItemGroup>
 

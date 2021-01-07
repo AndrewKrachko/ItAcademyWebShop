@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using DatabaseConnector;
+using MsSqlDb.AdoDataProvider;
 
 namespace ItAcademyWebShop
 {
@@ -21,7 +21,7 @@ namespace ItAcademyWebShop
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.TryAddSingleton<IRepository, DatabaseProvider>();
+            services.TryAddSingleton<IRepository, SqlDataProvider>();
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 

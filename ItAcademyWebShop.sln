@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItAcademyWebShop", "ItAcademyWebShop\ItAcademyWebShop.csproj", "{758EB0E6-F4EE-48A3-A5A7-7601A0600F3E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseConnector", "DatabaseConnector\DatabaseConnector.csproj", "{2D6F85BE-0E18-408F-883B-0CFB8F4A8E1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MsSqlDb.SqlDataProvider", "DatabaseConnector\MsSqlDb.SqlDataProvider.csproj", "{2D6F85BE-0E18-408F-883B-0CFB8F4A8E1F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItAcademyWebShop.Items", "Interfaces\ItAcademyWebShop.Items.csproj", "{D331923A-F1F4-4D80-9A30-9CF43B41F8C2}"
 EndProject
