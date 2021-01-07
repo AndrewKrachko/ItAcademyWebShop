@@ -26,7 +26,7 @@ namespace ItAcademyWebShop.Views.Shared
         {
             if (ActiveCategory == "")
             {
-                ActiveCategory = _repository.GetCategories().First().CategoryName ?? "";
+                ActiveCategory = _repository.GetCategories().FirstOrDefault()?.CategoryName ?? "";
             }
 
             return _repository.GetCategoryItems(ActiveCategory).ToList();
