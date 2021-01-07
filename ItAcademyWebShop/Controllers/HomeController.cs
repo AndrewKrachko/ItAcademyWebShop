@@ -1,8 +1,8 @@
-﻿using System;
+﻿using ItAcademyWebShop.Items.Interfaces;
+using ItAcademyWebShop.Views.Shared;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ItAcademyWebShop.Items.Interfaces;
-using ItAcademyWebShop.Views.Shared;
+using System;
 
 namespace ItAcademyWebShop.Controllers
 {
@@ -17,7 +17,7 @@ namespace ItAcademyWebShop.Controllers
 
         public IActionResult Index(string name = "")
         {
-            return View(new ItemModel(_repository) { ActiveCategory = name});
+            return View(new ItemModel(_repository) { ActiveCategory = name });
         }
 
         public IActionResult Contacts()
@@ -36,7 +36,7 @@ namespace ItAcademyWebShop.Controllers
             var cookieOptions = new CookieOptions();
             cookieOptions.Expires = DateTime.Now.AddDays(1);
             Response.Cookies.Append("userName", userName ?? "", cookieOptions);
-            
+
             return Redirect("Index");
         }
     }

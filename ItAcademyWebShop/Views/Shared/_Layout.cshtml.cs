@@ -1,9 +1,7 @@
-﻿using System;
+﻿using ItAcademyWebShop.Items.Interfaces;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using ItAcademyWebShop.Items.Interfaces;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ItAcademyWebShop.Views.Shared
 {
@@ -11,7 +9,7 @@ namespace ItAcademyWebShop.Views.Shared
     {
         private IRepository _repository;
 
-        public List<ICategory> GetMenuItems ()
+        public List<ICategory> GetMenuItems()
         {
             return _repository.GetCategories().ToList();
         }
