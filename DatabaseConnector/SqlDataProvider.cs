@@ -1,4 +1,5 @@
-﻿using ItAcademyWebShop.Items.Interfaces;
+﻿using ItAcademyWebShop.Items.ConnectionParameters;
+using ItAcademyWebShop.Items.Interfaces;
 using ItAcademyWebShop.Items.Items;
 using System;
 using System.Collections.Generic;
@@ -9,19 +10,19 @@ namespace MsSqlDb.AdoDataProvider
 {
     public class SqlDataProvider : IRepository
     {
-        private string _connectionString = string.Empty;
+        private IConnectionData _connectionData;
 
-        public SqlDataProvider(string connectionString = "Server=DESKTOP-3BAAIFR\\SQLEXPRESS;Database=ItAcademyWebShop;User Id=sa;Password=Password123;")
+        public SqlDataProvider(IConnectionData connectionData)
         {
-            _connectionString = connectionString;
+            _connectionData = connectionData;
+            _connectionData = new MsSqlConnectionData(new ServerProvider() { Name = "DESKTOP-3BAAIFR\\SQLEXPRESS" }, new DataBaseStorage() { Name = "ItAcademyWebShop" }, new MsSqlLoginPasswordCredentials() { Login = "sa", Password = "Password123" });
         }
 
         public IEnumerable<ICategory> GetCategories()
         {
             var result = new List<Category>();
 
-
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new SqlConnection(_connectionData.GetConnectionString()))
             {
 
                 var command = new SqlCommand("Select * from Category", connection);
@@ -49,7 +50,7 @@ namespace MsSqlDb.AdoDataProvider
             var result = new List<Item>();
 
 
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new SqlConnection(_connectionData.GetConnectionString()))
             {
                 var command = new SqlCommand($"Select Items.id, Items.Name, Items.Description, Items.Price from Items " +
                     $"join CategoryItems on Items.Id = CategoryItems.ItemId " +
