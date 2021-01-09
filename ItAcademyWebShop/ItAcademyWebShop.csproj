@@ -21,6 +21,13 @@
   <ItemGroup>
     <ProjectReference Include="..\DatabaseConnector\MsSqlDb.SqlDataProvider.csproj" />
     <ProjectReference Include="..\Interfaces\ItAcademyWebShop.Items.csproj" />
+    <ProjectReference Include="..\ItAcademyWebShop.BL\ItAcademyWebShop.BL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Parameters.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

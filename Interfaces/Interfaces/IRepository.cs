@@ -7,7 +7,6 @@ namespace ItAcademyWebShop.Items.Interfaces
         IItem GetItem(string id);
         IEnumerable<IItem> GetItems();
         IEnumerable<IItem> GetItems(string name);
-        IEnumerable<IItem> GetItems(string name, string category);
         IEnumerable<IItem> GetCategoryItems(string category);
         IEnumerable<ICategory> GetCategories();
     }

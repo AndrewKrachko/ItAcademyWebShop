@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseConnector\MsSqlDb.SqlDataProvider.csproj" />
+    <ProjectReference Include="..\DataProviderConnectionStringGenerator\ConnectionStringGenerator.csproj" />
+    <ProjectReference Include="..\Interfaces\ItAcademyWebShop.Items.csproj" />
+    <ProjectReference Include="..\MsSqlDbDataLinqProvider\MsSqlDb.DataLinqProvider.csproj" />
+  </ItemGroup>
+
+</Project>

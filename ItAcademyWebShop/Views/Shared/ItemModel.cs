@@ -7,27 +7,27 @@ namespace ItAcademyWebShop.Views.Shared
 {
     public class ItemModel : PageModel
     {
-        private IRepository _repository;
+        private IDataBroker _repository;
         public string ActiveCategory { get; set; }
 
-        public ItemModel(IRepository repository)
+        public ItemModel(IDataBroker repository)
         {
             _repository = repository;
         }
 
         public List<ICategory> GetMenuItems()
         {
-            return _repository.GetCategories().ToList();
+            return _repository.GetCategory().ToList();
         }
 
         public List<IItem> GetCategoryItems()
         {
             if (ActiveCategory == "")
             {
-                ActiveCategory = _repository.GetCategories().FirstOrDefault()?.CategoryName ?? "";
+                ActiveCategory = _repository.GetCategory().FirstOrDefault()?.CategoryName ?? "";
             }
 
-            return _repository.GetCategoryItems(ActiveCategory).ToList();
+            return _repository.GetItemsByCategory(ActiveCategory).ToList();
         }
     }
 }

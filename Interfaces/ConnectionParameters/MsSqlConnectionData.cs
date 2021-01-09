@@ -6,14 +6,17 @@ namespace ItAcademyWebShop.Items.ConnectionParameters
     {
         public IProvider Provider { get; set; }
         public IStorage Storage { get; set; }
-        public ICredentials Credentials { get => Credentials ?? new EmptyCredentials(); set => Credentials = value; }
-        public ISecuritySettings SecuritySettings { get => SecuritySettings ?? new EmptySecuritySettings(); set => SecuritySettings = value; }
-        public IOptions Options { get => Options ?? new EmptyOptions(); set => Options = value; }
+        public ICredentials Credentials { get; set; }
+        public ISecuritySettings SecuritySettings { get; set; }
+        public IOptions Options { get; set; }
 
         public MsSqlConnectionData(IProvider provider, IStorage storage)
         {
             Provider = provider;
             Storage = storage;
+            Credentials = new EmptyCredentials();
+            SecuritySettings = new EmptySecuritySettings();
+            Options = new EmptyOptions();
         }
 
         public MsSqlConnectionData(IProvider provider, IStorage storage, ICredentials credetials) : this(provider, storage)

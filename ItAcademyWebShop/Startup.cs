@@ -1,4 +1,5 @@
-﻿using ItAcademyWebShop.Items.Interfaces;
+﻿using ItAcademyWebShop.BL;
+using ItAcademyWebShop.Items.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -16,8 +17,8 @@ namespace ItAcademyWebShop
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            services.TryAddSingleton<IProcessor, WebShopProcessor>();
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.TryAddSingleton<IRepository, SqlDataProvider>();
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
@@ -34,11 +35,6 @@ namespace ItAcademyWebShop
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-        }
-
-        private void InitDatabase()
-        {
-
         }
     }
 }

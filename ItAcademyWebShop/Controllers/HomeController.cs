@@ -8,21 +8,21 @@ namespace ItAcademyWebShop.Controllers
 {
     public class HomeController : Controller
     {
-        private IRepository _repository;
+        private IProcessor _processor;
 
-        public HomeController(IRepository repository)
+        public HomeController(IProcessor processor)
         {
-            _repository = repository;
+            _processor = processor;
         }
 
         public IActionResult Index(string name = "")
         {
-            return View(new ItemModel(_repository) { ActiveCategory = name });
+            return View(new ItemModel(_processor.DataBroker) { ActiveCategory = name });
         }
 
         public IActionResult Contacts()
         {
-            return View(new ItemModel(_repository));
+            return View(new ItemModel(_processor.DataBroker));
         }
 
         public IActionResult About()
