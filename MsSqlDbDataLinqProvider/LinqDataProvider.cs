@@ -36,8 +36,7 @@ namespace MsSqlDb.LinqDataProvider
                 var query = from link in db.GetTable<DbCategoryItemLink>()
                              join item in db.GetTable<DbItem>() on link.ItemId equals item.Id  
                              where link.CategoryId == categoryId
-                             select item.ConvertToItem() /*new { Id = item.Id, Name = item.Name, Description = item.Description, Price = item.Price}*/;
-
+                             select item.ConvertToItem();
 
             return query;
         }

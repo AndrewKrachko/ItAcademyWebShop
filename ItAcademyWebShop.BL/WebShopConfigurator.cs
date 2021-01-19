@@ -1,4 +1,6 @@
-﻿using ItAcademyWebShop.Items.Interfaces;
+﻿using DatabaseUtilites;
+using ItAcademyWebShop.Items.Enums;
+using ItAcademyWebShop.Items.Interfaces;
 using MsSqlDb.AdoDataProvider;
 using MsSqlDb.LinqDataProvider;
 using System;
@@ -9,11 +11,11 @@ namespace ItAcademyWebShop.BL
 {
     class WebShopConfigurator
     {
-        private DataProviderConfigurator _dataProviderConfigurator;
+        private ConnectionStringGenerator _dataProviderConfigurator;
 
         public WebShopConfigurator(string configFile)
         {
-            _dataProviderConfigurator = new DataProviderConfigurator(configFile);
+            _dataProviderConfigurator = new ConnectionStringGenerator(configFile);
         }
 
         public IRepository SetDataProvider()

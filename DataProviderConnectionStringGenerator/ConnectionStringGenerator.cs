@@ -1,20 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using System.Xml.Linq;
+﻿using ItAcademyWebShop.Items.ConnectionParameters;
+using ItAcademyWebShop.Items.Enums;
 using ItAcademyWebShop.Items.Interfaces;
-using ItAcademyWebShop.Items.ConnectionParameters;
+using ItAcademyWebShop.Items.Items;
+using System;
+using System.Collections.Generic;
+using System.Xml.Linq;
 
-namespace ItAcademyWebShop.BL
+namespace DatabaseUtilites
 {
-    public class DataProviderConfigurator
+    public class ConnectionStringGenerator : IConnectionStringGenerator
     {
         public DataDistributors Distributor { get; set; }
         public DataReciever Reciever { get; set; }
         public IConnectionData ConnectionData { get; set; }
 
-        public DataProviderConfigurator(string path)
+
+        public ConnectionStringGenerator(string path)
         {
             var configFile = XDocument.Load(path);
 
@@ -24,6 +25,11 @@ namespace ItAcademyWebShop.BL
             Distributor = GetDataDistributor(distributor);
             Reciever = GetReceiver(reciever);
             ConnectionData = GetConnectionData(configFile);
+        }
+
+        public IConnectionData GenerateConnectionData(IEnumerable<string> parameters)
+        {
+            throw new NotImplementedException();
         }
 
         private DataReciever GetReceiver(string reciever)
@@ -56,12 +62,12 @@ namespace ItAcademyWebShop.BL
             var database = new DataBaseStorage() { Name = configFile.Element("DataProvider").Element("DataBase").Value };
             var credentials = new MsSqlLoginPasswordCredentials() { Login = configFile.Element("DataProvider").Element("Login").Value, Password = configFile.Element("DataProvider").Element("Password").Value };
 
-            return new MsSqlConnectionData(provider, database,credentials);
+            return new MsSqlConnectionData(provider, database, credentials);
         }
 
         private DataDistributors GetDataDistributor(string distributor)
         {
-            switch(distributor)
+            switch (distributor)
             {
                 case "Microsoft SQL Server 2016":
                     return DataDistributors.MsSqlServer2016;

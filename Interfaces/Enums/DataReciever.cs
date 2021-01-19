@@ -1,4 +1,4 @@
-﻿namespace ItAcademyWebShop.BL
+﻿namespace ItAcademyWebShop.Items.Enums
 {
     public enum DataReciever
     {

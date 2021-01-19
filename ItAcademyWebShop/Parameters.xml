@@ -2,7 +2,7 @@
 <DataProvider>
   <Reciever>Linq</Reciever>
   <Distribution>Microsoft SQL Server 2016</Distribution>
-  <Provider>DESKTOP-3BAAIFR\SQLEXPRESS</Provider>
+  <Provider>WSLI002\SQLEXPRESS</Provider>
   <DataBase>ItAcademyWebShop</DataBase>
   <Login>sa</Login>
   <Password>Password123</Password>

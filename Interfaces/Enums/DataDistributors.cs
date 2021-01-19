@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ItAcademyWebShop.BL
+namespace ItAcademyWebShop.Items.Enums
 {
     public enum DataDistributors
     {
