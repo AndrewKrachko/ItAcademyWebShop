@@ -15,7 +15,6 @@ namespace MsSqlDb.AdoDataProvider
         public SqlDataProvider(IConnectionData connectionData)
         {
             _connectionData = connectionData;
-            //_connectionData = new MsSqlConnectionData(new ServerProvider() { Name = "DESKTOP-3BAAIFR\\SQLEXPRESS" }, new DataBaseStorage() { Name = "ItAcademyWebShop" }, new MsSqlLoginPasswordCredentials() { Login = "sa", Password = "Password123" });
         }
 
         public IEnumerable<ICategory> GetCategories()
