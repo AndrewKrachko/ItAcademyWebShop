@@ -13,11 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{4D301B92-1A9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MsSqlDb.DataLinqProvider", "MsSqlDbDataLinqProvider\MsSqlDb.DataLinqProvider.csproj", "{270B64D5-12AD-4DDA-9D06-E5D9E8F23C43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItAcademyWebShop.BL", "ItAcademyWebShop.BL\ItAcademyWebShop.BL.csproj", "{D99906A8-593C-4789-8C0B-EBFA95AD8208}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItAcademyWebShop.BL", "ItAcademyWebShop.BL\ItAcademyWebShop.BL.csproj", "{D99906A8-593C-4789-8C0B-EBFA95AD8208}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionStringGenerator", "DataProviderConnectionStringGenerator\ConnectionStringGenerator.csproj", "{7DB7CB60-D3AC-4391-AA35-0F05C231EDCA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BL", "BL", "{3BEC7501-0331-4C0D-9EEC-E55452B1B665}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsSqlDb.EfDataProvider", "MsSqlDb.EfDataProvider\MsSqlDb.EfDataProvider.csproj", "{7AB0B327-B6A6-442F-8B4D-A6AD53B210A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{7DB7CB60-D3AC-4391-AA35-0F05C231EDCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DB7CB60-D3AC-4391-AA35-0F05C231EDCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DB7CB60-D3AC-4391-AA35-0F05C231EDCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AB0B327-B6A6-442F-8B4D-A6AD53B210A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AB0B327-B6A6-442F-8B4D-A6AD53B210A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AB0B327-B6A6-442F-8B4D-A6AD53B210A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AB0B327-B6A6-442F-8B4D-A6AD53B210A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 		{270B64D5-12AD-4DDA-9D06-E5D9E8F23C43} = {4D301B92-1A9F-46A5-AAE3-A23F35734501}
 		{D99906A8-593C-4789-8C0B-EBFA95AD8208} = {3BEC7501-0331-4C0D-9EEC-E55452B1B665}
 		{7DB7CB60-D3AC-4391-AA35-0F05C231EDCA} = {3BEC7501-0331-4C0D-9EEC-E55452B1B665}
+		{7AB0B327-B6A6-442F-8B4D-A6AD53B210A0} = {4D301B92-1A9F-46A5-AAE3-A23F35734501}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C8BA24D8-35E3-449D-8C26-E5B10B6B2781}
