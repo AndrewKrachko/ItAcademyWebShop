@@ -9,7 +9,8 @@
     <ProjectReference Include="..\DatabaseConnector\MsSqlDb.SqlDataProvider.csproj" />
     <ProjectReference Include="..\DataProviderConnectionStringGenerator\ConnectionStringGenerator.csproj" />
     <ProjectReference Include="..\Interfaces\ItAcademyWebShop.Items.csproj" />
-    <ProjectReference Include="..\MsSqlDbDataLinqProvider\MsSqlDb.DataLinqProvider.csproj" />
+    <ProjectReference Include="..\MsSqlDb.EfDataProvider\MsSqlDb.EfDataProvider.csproj" />
+    <ProjectReference Include="..\MsSqlDbDataLinqProvider\MsSqlDb.LinqDataProvider.csproj" />
   </ItemGroup>
 
 </Project>

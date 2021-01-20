@@ -13,7 +13,7 @@ namespace MsSqlDb.LinqDataProvider
 
         public Category ConvertToCategory()
         {
-            return new Category(Id.ToString(), Name);
+            return new Category() { CategoryId = Id, CategoryName = Name };
         }
     }
 }

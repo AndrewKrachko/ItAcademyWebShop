@@ -8,14 +8,14 @@ using System.Xml.Linq;
 
 namespace DatabaseUtilites
 {
-    public class ConnectionStringGenerator : IConnectionStringGenerator
+    public class RepositoryUtillit : IConnectionStringGenerator
     {
         public DataDistributors Distributor { get; set; }
         public DataReciever Reciever { get; set; }
         public IConnectionData ConnectionData { get; set; }
 
 
-        public ConnectionStringGenerator(string path)
+        public RepositoryUtillit(string path)
         {
             var configFile = XDocument.Load(path);
 
@@ -40,6 +40,8 @@ namespace DatabaseUtilites
                     return DataReciever.AdoNet;
                 case "Linq":
                     return DataReciever.Linq;
+                case "EF":
+                    return DataReciever.EF;
                 default:
                     return DataReciever.None;
             }

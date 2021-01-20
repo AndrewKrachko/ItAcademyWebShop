@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using ItAcademyWebShop.Items.Items;
+using System.Collections.Generic;
 
 namespace ItAcademyWebShop.Items.Interfaces
 {
     public interface IItem
     {
-        string ItemId { get; }
+        int ItemId { get; }
         string ItemName { get; }
-        IEnumerable<ICategory> Categories { get; }
+        IEnumerable<Category> Categories { get; }
         string Description { get; }
         double Price { get; }
     }

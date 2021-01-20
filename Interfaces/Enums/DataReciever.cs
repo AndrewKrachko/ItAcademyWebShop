@@ -4,6 +4,7 @@
     {
         None,
         AdoNet,
-        Linq
+        Linq,
+        EF
     }
 }

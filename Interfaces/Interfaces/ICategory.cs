@@ -2,7 +2,7 @@
 {
     public interface ICategory
     {
-        string CategoryId { get; }
+        int CategoryId { get; }
         string CategoryName { get; }
     }
 }

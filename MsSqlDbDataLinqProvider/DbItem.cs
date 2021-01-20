@@ -19,7 +19,7 @@ namespace MsSqlDb.LinqDataProvider
 
         public Item ConvertToItem()
         {
-            return new Item(Id.ToString(), Name, new List<ICategory>(), Description, (double)Price);
+            return new Item() { ItemId = Id, ItemName = Name, Categories = new List<Category>(), Description = Description, Price = (double)Price};
         }
     }
 }

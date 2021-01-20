@@ -35,7 +35,7 @@ namespace MsSqlDb.AdoDataProvider
                     var data = new object[reader.FieldCount];
                     reader.GetValues(data);
 
-                    result.Add(new Category(data[0].ToString(), data[1].ToString()));
+                    result.Add(new Category() { CategoryId = int.Parse(data[0].ToString()), CategoryName = data[1].ToString() });
                 }
 
                 connection.Close();
@@ -67,7 +67,7 @@ namespace MsSqlDb.AdoDataProvider
 
                     var price = 0.0;
                     double.TryParse(data[3].ToString(), out price);
-                    result.Add(new Item(data[0].ToString(), data[1].ToString(), new List<ICategory>(), data[2].ToString(), price));
+                    result.Add(new Item() { ItemId = int.Parse(data[0].ToString()), ItemName = data[1].ToString(), Categories = new List<Category>(), Description = data[2].ToString(), Price = price });
                 }
 
                 connection.Close();
