@@ -14,7 +14,6 @@ namespace DatabaseUtilites
         public DataReciever Reciever { get; set; }
         public IConnectionData ConnectionData { get; set; }
 
-
         public RepositoryUtillit(string path)
         {
             var configFile = XDocument.Load(path);

@@ -17,6 +17,13 @@ namespace MsSqlDb.EfDataProvider
             _dbContext.Database.EnsureCreated();
         }
 
+        public void PrepareIfNotPresent()
+        {
+            _dbContext.Database.EnsureCreated();
+            _dbContext.SaveChanges();
+
+        }
+
         public IEnumerable<ICategory> GetCategories()
         {
             throw new NotImplementedException();

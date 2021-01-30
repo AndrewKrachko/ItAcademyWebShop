@@ -28,7 +28,9 @@ namespace ItAcademyWebShop.BL
                 case DataReciever.Linq:
                     return new LinqDataProvider(_dataProviderConfigurator.ConnectionData);
                 case DataReciever.EF:
-                    return new EfDataProvider(_dataProviderConfigurator.ConnectionData);
+                    var databaseConnector = new EfDataProvider(_dataProviderConfigurator.ConnectionData);
+                    databaseConnector.PrepareIfNotPresent();
+                    return databaseConnector;
                 default:
                     throw new Exception("Cannot read server parameters");
             }

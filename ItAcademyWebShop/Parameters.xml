@@ -5,7 +5,7 @@
   <!--DESKTOP-3BAAIFR\SQLEXPRESS-->
   <!--WSLI002\SQLEXPRESS-->
   <Provider>WSLI002\SQLEXPRESS</Provider>
-  <DataBase>ItAcademyWebShop</DataBase>
+  <DataBase>WebShopDb</DataBase>
   <Login>sa</Login>
-  <Password>Password123</Password>
+  <Password>1234</Password>
 </DataProvider>
